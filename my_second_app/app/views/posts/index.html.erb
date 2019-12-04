@@ -1,0 +1,13 @@
+<h1>犬！</h1>
+<%=link_to'新規投稿する','posts/new'%>
+
+<% @post.each do |post| %>
+  <div class="post">
+    <div class="post-date">
+      投稿日時：<%= post.created_at %>
+    </div>
+    <div class="post-content">
+      <%= post.content %>
+    </div>
+  </div>
+<% end %>
