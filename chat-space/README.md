@@ -9,6 +9,7 @@
 # アソシエーション
 - has_many:messages
 - has_many:groups, through: :user_group
+- has_many:user_group
 
 
 ## messageテーブル
@@ -21,7 +22,7 @@
 |group_id|integer|null:false|
 # アソシエーション
 - belongs_to :user
-belongs_to :group
+- belongs_to :group
 
 
 ## groupテーブル
@@ -33,6 +34,7 @@ belongs_to :group
 |message_id|integer|null:false|
 # アソシエーション
 - has_many :users, through: :user_group
+- has_many :user_group
 - has_many :messages
 
 
@@ -40,6 +42,7 @@ belongs_to :group
 
 |Column|Type|Options|
 |------|----|-------|
+|position|string|null:false|
 |user_id|integer|null:false|
 |group_id|integer|null:false|
 # アソシエーション
