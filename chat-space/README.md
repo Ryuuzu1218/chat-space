@@ -8,16 +8,16 @@
 |password|string|null:false|
 # アソシエーション
 - has_many:messages
-- has_many:groups, through: :user_group
-- has_many:user_group
+- has_many:groups, through: :user_groups
+- has_many:user_groups
 
 
-## messageテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null:false|
-|image|string|null:false|
+|body|text||
+|image|string||
 |user_id|integr|null:false|
 |group_id|integer|null:false|
 # アソシエーション
@@ -25,24 +25,21 @@
 - belongs_to :group
 
 
-## groupテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------| 
-|groupname|string|null:false|
-|user_id|integer|null:false|
-|message_id|integer|null:false|
+|name|string|null:false|
 # アソシエーション
-- has_many :users, through: :user_group
-- has_many :user_group
+- has_many :users, through: :user_groups
+- has_many :user_groups
 - has_many :messages
 
 
-## user_groupテーブル
+## user_groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|position|string|null:false|
 |user_id|integer|null:false|
 |group_id|integer|null:false|
 # アソシエーション
