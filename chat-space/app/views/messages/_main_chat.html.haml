@@ -1,0 +1,50 @@
+.main-chat
+ .main-chat__group-info
+  .main-chat__group-info__title
+   .main-chat__group-info__title--name
+    グループ名
+   .main-chat__group-info__title--member
+    メンバー
+  .main-chat__group-info__edit
+   =link_to '#',class:'edit' do
+    .main-chat__group-info__edit__string
+     Edit
+ .main-chat__message-list
+  .main-chat__message-list__box
+   .main-chat__message-list__box__upper
+    .main-chat__message-list__box__upper__name
+     名前
+    .main-chat__message-list__box__upper__datetime
+     2019/12/20
+   .main-chat__message-list__box__downer
+    発言1
+  .main-chat__message-list__box
+   .main-chat__message-list__box__upper
+    .main-chat__message-list__box__upper__name
+     名前
+    .main-chat__message-list__box__upper__datetime
+     2019/12/20
+   .main-chat__message-list__box__downer
+    発言2
+  .main-chat__message-list__box
+   .main-chat__message-list__box__upper
+    .main-chat__message-list__box__upper__name
+     名前
+    .main-chat__message-list__box__upper__datetime
+     2019/12/20
+   .main-chat__message-list__box__downer
+    発言3
+ .main-chat__message-form
+  .main-chat__message-form__form-area
+   .main-chat__message-form__form-area__frame
+    %input{type:"text",placeholder:"ここに入力",class:"text-form"}
+    .main-chat__message-form__form-area__frame--file
+     %label{class: "input-box__image",type:"file"}
+      %input{type: "file",class:"none"}
+       = icon('fas', 'image')
+      .main-chat__message-form__form-area__frame__file--none
+       
+    
+     
+   .main-chat__message-form__form-area__send
+    Send
