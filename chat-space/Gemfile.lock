@@ -135,25 +135,11 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
     ruby_parser (3.14.1)
       sexp_processor (~> 4.9)
->>>>>>> Stashed changes
-=======
-=======
-    responders (3.0.0)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
->>>>>>> Stashed changes
-    ruby_parser (3.14.1)
-      sexp_processor (~> 4.9)
->>>>>>> 7ad3877bcb541e81497889f0a63671b73c1b1fd3
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -207,21 +193,9 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
   devise
   font-awesome-sass
   haml-rails
->>>>>>> Stashed changes
-=======
-=======
-  devise
->>>>>>> Stashed changes
-  font-awesome-sass
-  haml-rails
->>>>>>> 7ad3877bcb541e81497889f0a63671b73c1b1fd3
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
