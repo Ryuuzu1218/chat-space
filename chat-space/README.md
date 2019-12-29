@@ -35,3 +35,13 @@
 - has_many :user_groups
 - has_many :messages
 
+
+## user_groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null:false|
+|group_id|integer|null:false|
+# アソシエーション
+- belongs_to :user
+- belongs_to :group
