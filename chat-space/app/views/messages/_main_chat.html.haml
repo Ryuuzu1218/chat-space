@@ -2,46 +2,50 @@
  .main-chat__group-info
   .main-chat__group-info__title
    .main-chat__group-info__title--name
-    グループ名
+    #{@group.name}
    .main-chat__group-info__title--member
-    メンバー
+    メンバー:
+   - @user.each do |user|
+    #{user.name}
   .main-chat__group-info__edit
-   =link_to '#',class:'edit' do
+   =link_to  "/groups/#{@group.id}/edit",class:'edit' do
     .main-chat__group-info__edit__string
      Edit
  .main-chat__message-list
+
+
   .main-chat__message-list__box
+  - @messages.each do |messe|
    .main-chat__message-list__box__upper
     .main-chat__message-list__box__upper__name
-     名前
+     #{messe.user.name}
     .main-chat__message-list__box__upper__datetime
-     2019/12/20
+     #{messe.created_at}
    .main-chat__message-list__box__downer
-    発言1
-  .main-chat__message-list__box
-   .main-chat__message-list__box__upper
-    .main-chat__message-list__box__upper__name
-     名前
-    .main-chat__message-list__box__upper__datetime
-     2019/12/20
-   .main-chat__message-list__box__downer
-    発言2
-  .main-chat__message-list__box
-   .main-chat__message-list__box__upper
-    .main-chat__message-list__box__upper__name
-     名前
-    .main-chat__message-list__box__upper__datetime
-     2019/12/20
-   .main-chat__message-list__box__downer
-    発言3
+    #{messe.body}
+
  .main-chat__message-form
   .main-chat__message-form__form-area
    .main-chat__message-form__form-area__frame
-    %input{type:"text",placeholder:"ここに入力",class:"text-form"}
-    .main-chat__message-form__form-area__frame--file
-     %label{class: "input-box__image",type:"file"}
-      %input{type: "file",class:"none"}
-       = icon('fas', 'image')
+    =form_for [@group, @message] do |f|
+     =f.text_field :body, class: 'text-form',placeholder:'ここに入力'
+     .main-chat__message-form__form-area__frame--file
+      =f.label :image, class: 'input-box__image' do
+       =f.file_field :image, class: 'none'
+       =icon('fas', 'image')
       .main-chat__message-form__form-area__frame__file--none
-   .main-chat__message-form__form-area__send
-    Send
+     .main-chat__message-form__form-area__send
+      =f.submit 'Send',class: 'send'
+
+  -#     .main-chat__message-form
+  -# .main-chat__message-form__form-area
+  -#  .main-chat__message-form__form-area__frame
+  -#   =form_for [@group, @message] do |f|
+  -#    =f.text_field :body, class: 'text-form',placeholder:'ここに入力'
+  -#    .main-chat__message-form__form-area__frame--file
+  -#    =f.label :image, class: 'input-box__image' do
+  -#     =f.file_field :image, class: 'none'
+  -#     = icon('fas', 'image')
+  -#     .main-chat__message-form__form-area__frame__file--none
+  -#    .main-chat__message-form__form-area__send
+  -#     =f.submit 'Send',class: 'send'

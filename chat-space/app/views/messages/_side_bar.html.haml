@@ -11,11 +11,12 @@
  .side-bar__group-list
   - current_user.groups.each do |group|
    .side-bar__group-list__group
-    =link_to "#" do 
+    =link_to "/groups/#{group.id}/messages" do 
      .side-bar__group-list__group__name
       =group.name
      .side-bar__group-list__group__latest
-      ここが最新メッセージ
+      =group.show_last_message
+
   -# .side-bar__group-list__group
   -#  .side-bar__group-list__group__name
   -#   ここがグループ名2
