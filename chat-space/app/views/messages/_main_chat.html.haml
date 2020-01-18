@@ -24,7 +24,7 @@
    .main-chat__message-list__box__downer__body
     #{messe.body}
    .main-chat__message-list__box__downer__image
-    =image_tag "#{messe.image}"
+    = image_tag messe.image.url if messe.image.present?
 
  .main-chat__message-form
   .main-chat__message-form__form-area
