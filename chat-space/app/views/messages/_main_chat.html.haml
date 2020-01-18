@@ -5,8 +5,8 @@
     #{@group.name}
    .main-chat__group-info__title--member
     メンバー:
-   - @user.each do |user|
-    #{user.name}
+    - @user.each do |user|
+     #{user.name}
   .main-chat__group-info__edit
    =link_to  "/groups/#{@group.id}/edit",class:'edit' do
     .main-chat__group-info__edit__string
@@ -21,8 +21,10 @@
      #{messe.user.name}
     .main-chat__message-list__box__upper__datetime
      #{messe.created_at}
-   .main-chat__message-list__box__downer
+   .main-chat__message-list__box__downer__body
     #{messe.body}
+   .main-chat__message-list__box__downer__image
+    = image_tag messe.image.url if messe.image.present?
 
  .main-chat__message-form
   .main-chat__message-form__form-area
