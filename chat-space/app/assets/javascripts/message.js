@@ -1,43 +1,34 @@
 $(function(){
 
   function buildHTML (message){
-    var addImage = '';
-      if(message.body && message.image){
         var addImage = `<img src="${message.image}">`;
-          var html = 
-          `<div class="main-chat__message-list__box__one__downer__body">`+
+          var html_upper = `<div class="main-chat__message-list__box__one__upper" data-message-id=` + message.id + `>` +
+          `<div class="main-chat__message-list__box__one__upper__name">`+
+            message.user_name +
+          `</div>`+
+          `<div class="main-chat__message-list__box__one__upper__datetime">`+
+            message.created_at +
+          `</div>`+
+        `</div>`
+        if(message.body && message.image){
+          var html_downer =`<div class="main-chat__message-list__box__one__downer__body">`+
             message.body +
           `</div>`+
           `<div class="main-chat__message-list__box__one__downer__image">`+
                    addImage +
                  `</div>`
         }   else if(message.body)  {
-          var html = `<div class="main-chat__message-list__box__one__upper" data-message-id=` + message.id + `>` +
-                    `<div class="main-chat__message-list__box__one__upper__name">`+
-                      message.user_name +
-                    `</div>`+
-                    `<div class="main-chat__message-list__box__one__upper__datetime">`+
-                      message.created_at +
-                    `</div>`+
-                  `</div>`+
+          var html_downer = 
                     `<div class="main-chat__message-list__box__one__downer__body">`+
                       message.body +
                     `</div>`
         }   else if(message.image)  {
-          var addImage = `<img src="${message.image}">`;
-          var html=
-                   `<div class="main-chat__message-list__box__one__upper" data-message-id=` + message.id + `>` +
-                     `<div class="main-chat__message-list__box__one__upper__name">`+
-                       message.user_name +
-                     `</div>`+
-                     `<div class="main-chat__message-list__box__one__upper__datetime">`+
-                       message.created_at +
-                     `</div>`+
-                   `</div>`+
+          var html_downer=
                    `<div class="main-chat__message-list__box__one__downer__image">`+
                    addImage +
                  `</div>`
                   }
+                  var html=html_upper + html_downer
                     return html;
                   }
 $('#new_message').on('submit',function(e){
