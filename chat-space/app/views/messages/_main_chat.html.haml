@@ -13,18 +13,6 @@
      Edit
  .main-chat__message-list
 
-
-  -# .main-chat__message-list__box
-  -# - @messages.each do |messe|
-  -#  .main-chat__message-list__box__upper{data:{message:{id:messe.id}}}
-  -#   .main-chat__message-list__box__upper__name
-  -#    #{messe.user.name} 
-  -#   .main-chat__message-list__box__upper__datetime
-  -#    #{messe.created_at}
-  -#  .main-chat__message-list__box__downer__body
-  -#   #{messe.body} 
-  -#  .main-chat__message-list__box__downer__image
-  -#   = image_tag messe.image.url if messe.image.present?
   .main-chat__message-list__box
    .main-chat__message-list__box__one
    - @messages.each do |messe|
@@ -38,7 +26,6 @@
      .main-chat__message-list__box__one__downer__image
       = image_tag messe.image.url if messe.image.present?
 
-
  .main-chat__message-form
   .main-chat__message-form__form-area
    .main-chat__message-form__form-area__frame
@@ -51,16 +38,3 @@
       .main-chat__message-form__form-area__frame__file--none
      .main-chat__message-form__form-area__send
       =f.submit 'Send',class: 'send'
-
-  -#     .main-chat__message-form
-  -# .main-chat__message-form__form-area
-  -#  .main-chat__message-form__form-area__frame
-  -#   =form_for [@group, @message] do |f|
-  -#    =f.text_field :body, class: 'text-form',placeholder:'ここに入力'
-  -#    .main-chat__message-form__form-area__frame--file
-  -#    =f.label :image, class: 'input-box__image' do
-  -#     =f.file_field :image, class: 'none'
-  -#     = icon('fas', 'image')
-  -#     .main-chat__message-form__form-area__frame__file--none
-  -#    .main-chat__message-form__form-area__send
-  -#     =f.submit 'Send',class: 'send'

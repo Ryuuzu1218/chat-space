@@ -65,7 +65,6 @@ $('#new_message').on('submit',function(e){
   })  
   var reloadMessages=function(){
     last_message_id = $('.main-chat__message-list__box__one__upper:last').data("message-id");
-    console.log(last_message_id)
     $.ajax({
       url:"api/messages",
       type:'get',
@@ -75,14 +74,11 @@ $('#new_message').on('submit',function(e){
     .done(function(message){
       if (message.length !== 0) {
       var insertHTML=''
-      console.log(message)
       
-      //console.log(buildHTML)
       $.each(message, function(i, message){
         insertHTML += buildHTML(message)
       })
       
-      console.log (insertHTML)
 
       $('.main-chat__message-list__box').append(insertHTML)
       $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
@@ -91,7 +87,7 @@ $('#new_message').on('submit',function(e){
     }
     })
     .fail(function(){
-      console.log('自動更新でエラー')
+      alert('自動更新でエラー')
     })
   }
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
