@@ -1,0 +1,34 @@
+.side-bar
+ .side-bar__user-name
+  .side-bar__user-name--user-menu
+   .side-bar__user-name--user-menu--name
+    #{current_user.name}
+   .side-bar__user-name--user-menu--icon
+    =link_to new_group_path,class:"icon" do
+     =icon('far','edit')
+    =link_to edit_user_path(current_user),class:"icon" do
+     =icon('fa','cog')
+ .side-bar__group-list
+  - current_user.groups.each do |group|
+   .side-bar__group-list__group
+    =link_to "/groups/#{group.id}/messages" do 
+     .side-bar__group-list__group__name
+      =group.name
+     .side-bar__group-list__group__latest
+      =group.show_last_message
+
+  -# .side-bar__group-list__group
+  -#  .side-bar__group-list__group__name
+  -#   ここがグループ名2
+  -#  .side-bar__group-list__group__latest
+  -#   ここが最新メッセージ
+  -# .side-bar__group-list__group
+  -#  .side-bar__group-list__group__name
+  -#   ここがグループ名3 
+  -#  .side-bar__group-list__group__latest
+  -#   ここが最新メッセージ
+
+
+
+
+
