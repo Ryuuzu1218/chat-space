@@ -21,10 +21,10 @@
       #{messe.user.name} 
      .main-chat__message-list__box__one__upper__datetime
       #{messe.created_at}
-     .main-chat__message-list__box__one__downer__body
-      #{messe.body} 
-     .main-chat__message-list__box__one__downer__image
-      = image_tag messe.image.url if messe.image.present?
+    .main-chat__message-list__box__one__downer__body
+     #{messe.body} 
+    .main-chat__message-list__box__one__downer__image
+     = image_tag messe.image.url if messe.image.present?
 
  .main-chat__message-form
   .main-chat__message-form__form-area

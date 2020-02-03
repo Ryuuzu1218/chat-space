@@ -1,8 +1,11 @@
+
 .side-bar{
   width: 300px;
   background-color:#ffffff;
   height: 100vh;
   float: left;
+  color:white ;
+ 
   &__user-name{
     height: 100px;
     color: hsl(0, 0%, 100%);
@@ -96,7 +99,7 @@
       padding-bottom: 46px;
       display: flex;
       flex-direction: column;
-      &__upper{
+      &__one__upper{
         display: flex;
         padding-bottom: 12px;
         &__name{
@@ -106,9 +109,10 @@
         &__datetime{
           color: #999999;
           font-size: 12px;
+          margin-left: 8px;
         }
       }
-      &__downer{
+      &__one__downer{
         font-size: 14px;
         color: #434A54;
       }
@@ -174,4 +178,8 @@
 }
 .new_message{
   display: flex;
+}
+a{
+  color:white;
+  text-decoration: none;
 }
